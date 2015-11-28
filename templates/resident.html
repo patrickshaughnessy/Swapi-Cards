@@ -1,0 +1,63 @@
+<div class="col-xs-4">
+  <div class="row">
+    <div class="col-xs-6" ng-show="resident">
+      <h6>Name: </h6>
+      <h4>{{resident.name}}</h4>
+      <!-- <button class="btn btn-default">Get More Info!</button> -->
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#{{residentModalId}}">
+        Get more info
+      </button>
+
+      <!-- Modal -->
+      <div style="color: black" class="modal fade" id="{{residentModalId}}" tabindex="-1" role="dialog" aria-labelledby="{{residentModalId}}Label">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="{{residentModalId}}Label">{{resident.name}}</h4>
+            </div>
+            <div class="modal-body table-responsive">
+              <table class="table">
+                <tbody>
+                  <tr ng-repeat="(key, val) in resident" ng-if="$index < 8">
+                    <td style="text-align: right">{{beautifyKey(key)}}</td>
+                    <td>:</td>
+                    <td>{{val}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Ok!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="col-xs-6" ng-hide="resident">
+      <h6>Just a moment...</h6>
+    </div>
+  </div>
+</div>
+
+<!-- <table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Height</th>
+      <th>Eye Color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{resident.name}}</td>
+      <td>{{resident.gender}}</td>
+      <td>{{resident.height}}</td>
+      <td>{{resident.eye_color}}</td>
+    </tr>
+  </tbody>
+</table> -->

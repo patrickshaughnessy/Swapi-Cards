@@ -1,0 +1,10 @@
+<div class="dropdown" >
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Check out a planet --->
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="text-align: center">
+    <li ng-hide="planetsWithResidents.length"> --- Loading --- </li>
+    <li ng-show="planetsWithResidents.length" ng-repeat="planet in planetsWithResidents"><a ng-click="goToPlanet($index)">{{planet}}</a></li>
+  </ul>
+</div>

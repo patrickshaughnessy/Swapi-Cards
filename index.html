@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="swapiApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Swapi Cards</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="public/css/style.css">
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body ng-controller="mainCtrl">
+  <img class="background" src="http://www.hdwallpapersnew.net/wp-content/uploads/2015/03/star-wars-hd-wallpaper-widescreen-high-resolution-images-for-desktop-background.jpg">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2 class="planet">How many residents in each planet?</h2>
+        <input type="number" min="0" max='10' value='0' ng-model="minRes">
+        <swapi-planets-selector min-residents="{{minRes}}" class="selector"></swapi-planets-selector>
+      </div>
+      <div class="col-xs-12">
+        <swapi-planet id="{{planetId}}" class="planet">
+          <swapi-resident ng-repeat="resident in residents" id="{{resident}}"></swapi-resident>
+        </swapi-planet>
+      </div>
+    </div>
+  </div>
+
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
