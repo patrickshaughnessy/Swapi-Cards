@@ -4,12 +4,9 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "start": "node",
-    "postinstall": "bower i"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bower": "^1.6.8"
   }
 }
