@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "postinstall": "npm i && bower i"
+    "start": "",
+    "postinstall": "bower i"
   },
   "author": "",
   "license": "ISC",
